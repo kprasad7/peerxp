@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block title %}
+  <title>student details</title>
+{% endblock title %}
+
+{% block content %}
+  <center>
+     <h1>Sign In</h1>
+X
+       <div class="container">
+        </br>
+          <form method='POST'> 
+           {% csrf_token %}
+    
+
+            <div class="col-sm-3 my-1">
+              <input type="email" class="form-control"  placeholder="EMAIL"  name="email">
+            </div>
+            <div class="col-sm-3 my-1">
+              <input type="password" class="form-control" placeholder="PASSWORD"  name="passwordd">
+            </div>  
+            <button type="submit" class="btn btn-primary">SIGN IN</button>
+          </form>
+  
+        </div> 
+        {% if messages %}
+        {% for msg in messages %}
+        <b>{{msg}}</b>
+        {% endfor %}
+        {% endif %} 
+        <em> If Have A Does Not Account Please</em> <a class="link" href="{% url 'Post'%}">Sign Up</a>
+          
+
+
+         
+        
+         
+
+  </center>
+{% endblock content %}
+

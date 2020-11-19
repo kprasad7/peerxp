@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block title %}
+  <title>student details</title>
+{% endblock title %}
+
+{% block content %}
+  <center>
+     <h1>Sign UP</h1>
+     
+       <div class="container">
+        </br>
+          <form method='POST'>
+            {% csrf_token %}
+            <div class="col-sm-3 my-1">
+              <input type="text" class="form-control" placeholder="NAME"  name='name'>
+            </div>  
+            <div class="col-sm-3 my-1">
+              <input type="text" class="form-control"  placeholder="EMAIL"  name='email'>
+            </div>
+            <div class="col-sm-3 my-1">
+              <input type="text" class="form-control" placeholder="PASSWORD"  name='passwordd'>
+            </div>  
+            <button type="submit" class="btn btn-primary">INSERT</button>
+        </div> 
+        {% if messages %}
+        {% for msg in messages %}
+        <b>{{msg}}</b>
+        {% endfor %}
+        {% endif %} 
+        <em>If Have A Account Please<a class="link" href="{% url 'loginuser'%}">Sign In</a>
+          </form>
+
+
+
+         
+        
+         
+
+  </center>
+{% endblock content %}
